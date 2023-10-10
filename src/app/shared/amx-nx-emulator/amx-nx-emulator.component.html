@@ -1,0 +1,82 @@
+<form>
+    <div class="border bg-grey p-3 mb-4">
+        <div class="gx-0 row">
+            <div class="col-6 pe-2 col">
+                <div class="align-items-center gx-0 row">
+                    <label class="p-0 form-label col-form-label col-sm-4">Port:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" [(ngModel)]="btnProp.port" name="btnPort"
+                            (ngModelChange)="handleBtnPropChange($event, 'port')" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 ps-2 col">
+                <div class="align-items-center gx-0 row">
+                    <label class="p-0 form-label col-form-label col-sm-5">Channel:</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" [(ngModel)]="btnProp.channel" name="btnChannel"
+                            (ngModelChange)="handleBtnPropChange($event, 'channel')" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gx-0 py-3 row">
+            <div class="d-flex justify-content-center col">
+                <amx-nx-button [configuration]="btnProp"></amx-nx-button>
+            </div>
+        </div>
+        <div class="gx-0 row">
+            <div class="col-6 pe-2 col">
+                <div class="align-items-center gx-0 row">
+                    <label class="p-0 form-label col-form-label col-sm-4">Port:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" [(ngModel)]="cbProps.port" name="cbPort"
+                            (ngModelChange)="handleCBPropChange($event, 'port')" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 ps-2 col">
+                <div class="align-items-center gx-0 row">
+                    <label class="p-0 form-label col-form-label col-sm-5">Channel:</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" [(ngModel)]="cbProps.channel" name="cbChannel"
+                            (ngModelChange)="handleCBPropChange($event, 'channel')" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gx-0 pt-3 row">
+            <div class="d-flex justify-content-center col">
+                <amx-nx-checked-box [configuration]="cbProps"></amx-nx-checked-box>
+            </div>
+        </div>
+    </div>
+    <div class="border bg-grey p-3">
+        <div class="align-items-center gx-0 mb-2 row">
+            <label class="p-0 form-label col-form-label col-sm-12">Port:</label>
+            <div class="col-sm-12">
+                <input type="text" class="form-control" [(ngModel)]="lvlProps.port" name="port"
+                    (ngModelChange)="handleLevelChange($event, 'port')" />
+            </div>
+        </div>
+        <div class="align-items-center gx-0 mb-2 row">
+            <label class="p-0 form-label col-form-label col-sm-12">Level:</label>
+            <div class="col-sm-12">
+                <input type="text" class="form-control" [(ngModel)]="lvlProps.level" name="level"
+                    (ngModelChange)="handleLevelChange($event, 'level')" />
+            </div>
+        </div>
+        <div class="align-items-center gx-0 mb-2 row">
+            <label class="p-0 form-label col-form-label col-sm-12">Current Value:</label>
+            <div class="col-sm-12">
+                <amx-nx-level [configuration]="lvlProps" />
+            </div>
+        </div>
+        <div class="align-items-center gx-0 mb-2 row">
+            <label class="p-0 form-label col-form-label col-sm-12">Current Value:</label>
+            <div class="col-sm-12">
+                <amx-nx-meter [configuration]="lvlProps" />
+            </div>
+        </div>
+    </div>
+</form>

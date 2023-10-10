@@ -1,0 +1,29 @@
+<div
+class="form-check"
+[ngClass]="{
+    'form-check-inline': radioConfig.inline,
+    'form-switch': radioConfig.switch
+  }">
+<input
+  class="form-check-input"
+  type="radio"
+  name="exampleRadios"
+  [id]="'switch_' + (radioConfig.port || '') + '_' + (radioConfig.channel || '')"
+  value="option1"
+  [disabled]="radioConfig.disabled"
+  [checked]="radioConfig.checked"
+  (change)="onChange()"
+  [hidden]="radioConfig.hidden"
+/>
+<label
+  class="form-check-label"
+  [for]="
+    'switch_' +
+    (radioConfig.port || '') +
+    '_' +
+    (radioConfig.channel || '')
+  "
+>
+  {{ radioConfig.text }}
+</label>
+</div>

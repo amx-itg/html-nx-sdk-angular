@@ -1,0 +1,7 @@
+<div
+    [ngClass]="['row g-2', 'justify-content-' + gridConfig.justify, 'gx-'+ gridConfig.gridMarginX , 'gy-'+ gridConfig.gridMarginY]">
+    <div *ngFor="let btn of gridConfig.btns; let index = index"
+        [ngClass]="['col-'+ gridConfig.size ,'d-flex justify-content-center ']">
+        <amx-nx-button [configuration]="btn"></amx-nx-button>
+    </div>
+</div>

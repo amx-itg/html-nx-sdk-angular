@@ -1,0 +1,80 @@
+<div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center">
+    <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="card-title h5">Single Button</div>
+            <div class="d-flex justify-content-center align-items-center card-body-h-100">
+              <amx-nx-button [configuration]="btnConfig"></amx-nx-button>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="row">
+              <div class="col-12 d-flex align-items-start justify-content-start">
+                <h5 class="card-title">Control buttons</h5>
+              </div>
+            </div>
+            <div class="row" >
+              <div class="col mb-2" *ngFor="let group of testingButtons; let i = index">
+                <amx-nx-button-group [configuration]="group"></amx-nx-button-group>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+      </div>
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <div class="card-title h5">Multi Grid Button</div>
+                <div class="d-flex justify-content-center align-items-center card-body-h-100">
+                    <amx-nx-button-grid [configuration]="btnGridConfig"></amx-nx-button-grid>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <div class="card-title h5">Button Group</div>
+                <div class="d-flex justify-content-center align-items-center card-body-h-100">
+                    <amx-nx-button-group [configuration]="btnGroupConfig"></amx-nx-button-group>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <div class="card-title h5">Single Checkbox</div>
+                <div class="d-flex justify-content-center align-items-center card-body-h-100">
+                    <amx-nx-checked-box [configuration]="cbConfig"></amx-nx-checked-box>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <div class="card-title h5">Checkbox Group</div>
+                <div class="d-flex justify-content-center align-items-center card-body-h-100">
+                    <div>
+                        <amx-nx-cbgroup [configuration]="cbGroupConfig" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <div class="card-title h5">Radio Group</div>
+                <amx-nx-radio-group [configuration]="radioGroupConfig"> </amx-nx-radio-group>
+            </div>
+        </div>
+    </div>
+</div>

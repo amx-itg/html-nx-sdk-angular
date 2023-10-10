@@ -1,0 +1,18 @@
+<div class="row g-4 justify-content-center">
+    <div class="col-md-3 col-sm-12 col-12">
+        <div class="h-100 border-0 card">
+            <div class="text-center card-body">
+                <button class="btn btn-primary" variant="primary" (click)="getFile()">
+                    Get configuration file
+                </button>
+                <div class="mt-3 text-center card-text">
+                    <strong>Note:</strong> File to be served is set in the netlinx
+                    file.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9 col-sm-12 col-12">
+        <amx-text-editor [value]="editorValue" [options]="editoConfig" (onChangeValue)="onChangeEditorValue($event)" ></amx-text-editor>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="form-check" [ngClass]="{
+  'form-check-inline': checkboxConfig.inline,
+  'form-switch': checkboxConfig.switch
+}">
+  <input type="checkbox" class="form-check-input" [id]="
+      'switch_' +
+      (checkboxConfig.port || '') +
+      '_' +
+      (checkboxConfig.channel || '')
+    " [disabled]="checkboxConfig.disabled" [checked]="checkboxConfig.checked" (change)="onChange($event)"
+    [hidden]="checkboxConfig.hidden" />
+  <label class="form-check-label" [for]="
+      'switch_' +
+      (checkboxConfig.port || '') +
+      '_' +
+      (checkboxConfig.channel || '')
+    ">{{ checkboxConfig.text }}</label>
+</div>

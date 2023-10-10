@@ -1,0 +1,50 @@
+
+<div class="card h-100">
+    <div class="card-body">
+        <div class="card-title h5">External Connection
+            <span class="float-end p-2 mt-1 border border-light rounded-circle" [ngClass]="connectionStatusClass"
+                id="connectStatus"></span>
+        </div>
+        <form>
+            <div class="align-items-center mb-2 gx-0 row">
+                <label class="p-0 form-label col-form-label col-sm-3"> Controller Address: </label>
+
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" [(ngModel)]="connection.url" name="url"
+                        (ngModelChange)="handleChange($event, 'url')">
+                </div>
+            </div>
+            <div class="align-items-center mb-2 gx-0 row">
+                <label class="p-0 form-label col-form-label col-sm-3"> Security Key: </label>
+                <div class="col-sm-9">
+                    <textarea class="form-control" [(ngModel)]="connection.key" name="key"
+                        (ngModelChange)="handleChange($event, 'key')"></textarea>
+                </div>
+            </div>
+            <div class="align-items-center mb-2 gx-0 row">
+                <label class="p-0 form-label col-form-label col-sm-3"> Username: </label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" [(ngModel)]="connection.username" name="username"
+                        (ngModelChange)="handleChange($event, 'username')">
+                </div>
+            </div>
+            <div class="align-items-center mb-2 gx-0 row">
+                <label class="p-0 form-label col-form-label col-sm-3"> Password: </label>
+                <div class="col-sm-9">
+                    <input type="password" class="form-control" [(ngModel)]="connection.password" name="password"
+                        (ngModelChange)="handleChange($event, 'password')">
+                </div>
+            </div>
+        </form>
+        <div class=" row justify-content-end mt-4">
+            <div class="col-8 d-flex justify-content-end">
+                <Button type="button" class="me-3 btn btn-success" (click)="connect()">
+                    Connect
+                </Button>
+                <Button type="button" class="btn btn-danger" (click)="disconnect()">
+                    Disconnect
+                </Button>
+            </div>
+        </div>
+    </div>
+</div>

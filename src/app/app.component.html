@@ -1,0 +1,69 @@
+<div class="wrapper">
+
+  <ng-container *ngIf="!preLoading">
+    <header class="bd-header d-flex align-items-stretch border-bottom border-dark app-hearder">
+      <div class="container-fluid d-flex align-items-center">
+        <div class="d-flex align-items-center fs-4 text-white mb-0">
+          <img src="assets/images/amx-logo-white.png" height="32" class="me-2" alt="Amx Logo" />
+        </div>
+        <ul class="ms-auto link-light nav">
+          <li class="nav-item">
+            <a routerLink="/channels" routerLinkActive="active" class="nav-link">
+              Channels
+            </a>
+          <li class="nav-item">
+            <a routerLink="/levels" routerLinkActive="active" class="nav-link">
+              Levels
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/files" routerLinkActive="active" class="nav-link">
+              Files
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/emulator" routerLinkActive="active" class="nav-link">
+              Emulator
+            </a>
+          </li>
+
+          <li class="nav-item">
+
+            <div ngbDropdown class=" nav-item dropdown">
+              <a id="dropdownButton" ngbDropdownToggle role="button" tabindex="0" class="dropdown-toggle nav-link">Navigation</a>
+              <div ngbDropdownMenu aria-labelledby="dropdownButton" class="p-0">
+               
+                  <amx-nx-button class="dropdown-item p-0"
+                    [configuration]="{ 'port': 13, 'channel': 100, 'text': 'Channels', 'style': 'btn  border-0 rounded-0 text-decoration-none w-100 ' }"></amx-nx-button>
+               
+                  <amx-nx-button class="dropdown-item p-0"
+                    [configuration]="{ port: 13, channel: 101, text: 'Levels', style: 'btn  border-0 rounded-0 text-decoration-none w-100 ' }"></amx-nx-button>
+               
+                  <amx-nx-button class="dropdown-item p-0"
+                    [configuration]="{ port: 13, channel: 102, text: 'Files', style: 'btn  border-0 rounded-0 text-decoration-none w-100 ' }"></amx-nx-button>
+              
+                  <amx-nx-button class="dropdown-item p-0"
+                    [configuration]="{ port: 13, channel: 103, text: 'Emulator', style: 'btn  border-0 rounded-0 text-decoration-none w-100 ' }"></amx-nx-button>
+            
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn btn-default btn-logs p-0" (click)="open()">
+              <i class="bi bi-terminal"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <div class="container-fluid app-container">
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+  </ng-container>
+
+  <ng-container *ngIf="preLoading">
+    <amx-preloading></amx-preloading>
+  </ng-container>
+</div>

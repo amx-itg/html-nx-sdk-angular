@@ -1,0 +1,4 @@
+<div class="progress progress-md">
+  <div class="progress-bar" [ngClass]="meterConfig.style" role="progressbar" [id]="'progress_' + meterConfig.port + '_' + meterConfig.level" [style.width.%]="meterConfig.now" [attr.aria-valuenow]="meterConfig.now"
+    [attr.aria-valuemin]="meterConfig.min" [attr.aria-valuemax]="meterConfig.max"></div>
+</div>

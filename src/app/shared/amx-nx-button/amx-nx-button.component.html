@@ -1,0 +1,29 @@
+
+<button
+  type="button"
+  [ngClass]="[
+  (btn.className || ''),
+  'btn',
+  (btn.style ? btn.style : 'btn-primary'),
+  (btn.size || ''),
+  (btn.active ? 'active' : ''),
+  (btn.disabled ? 'disabled': ''),
+  (btn.hidden ? 'visually-hidden' : '')
+]"
+
+  [id]="
+    'btn_' + (btn.port || '') + '_' + (btn.channel || '')
+  "
+  (touchstart)="setButton('push')"
+  (mousedown)="setButton('push')"
+  (touchcancel)="setButton('release')"
+  (touchend)="setButton('release')"
+  (mouseup)="setButton('release')"
+  (contextmenu)="$event.preventDefault()"
+>
+  <ng-container *ngIf="btn?.icon">
+    <i class="me-2" [ngClass]='[btn.icon]'></i> 
+    </ng-container
+  >{{ btn.text }}
+ 
+</button>

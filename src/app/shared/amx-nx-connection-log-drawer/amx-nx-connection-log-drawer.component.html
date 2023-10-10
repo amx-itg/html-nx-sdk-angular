@@ -1,0 +1,23 @@
+<div role="dialog" aria-modal="true" class="connection-log-drawer offcanvas offcanvas-end show" tabindex="-1"
+    style="visibility: visible;">
+    <div class="offcanvas-header">
+        <div class="offcanvas-title h5">Connection</div>
+        <button type="button" class="btn-close" aria-label="Close"
+            (click)="activeOffcanvas.dismiss('Cross click')"></button>
+    </div>
+    <div class="offcanvas-body p-0">
+        <div class="h-100 card border-0" >
+            <div class="card-body pb-0">
+                <div class="card-title h5">Log File:</div>
+                <amx-nx-log [messages]="messages" />
+            </div>
+            <div class="card-footer  d-flex align-items-center justify-content-center">
+                <div class="row">
+                    <div class="col-12">
+                        <button type="button" class="btn btn-primary" (click)="clearLog()">Clear Log</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

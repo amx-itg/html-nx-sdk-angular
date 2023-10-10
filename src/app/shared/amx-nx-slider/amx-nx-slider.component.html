@@ -1,0 +1,6 @@
+<div #sliderContainer>
+  <amx-ion-range-slider [options]="options" #ionSliderRef (onStart)="onStart()" (onUpdate)="onUpdate()"
+    (onChange)="onChange($event)" (onFinish)="onFinish($event)" (hctrlevent)="hctrlevent($event)" />
+  <i class="{{options?.color}}" id="bgholder" #bgRef></i>
+  <div class="{{options?.color}}" id="color_{{options?.id}}"></div>
+</div>
